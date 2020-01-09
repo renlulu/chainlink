@@ -26,6 +26,7 @@ const createErrorAction = (error: Error, type: string) => ({
   error: error.stack,
 })
 
+// TODO: Delete this and import from reducers/actions
 export enum RouterActionType {
   REDIRECT = 'REDIRECT',
   MATCH_ROUTE = 'MATCH_ROUTE',
@@ -47,18 +48,6 @@ const curryErrorHandler = (dispatch: Dispatch, type: string) => (
 }
 
 export const MATCH_ROUTE = 'MATCH_ROUTE'
-
-interface Match {
-  url: string
-  params: object
-}
-
-export const matchRoute = (match: Match) => {
-  return {
-    type: RouterActionType.MATCH_ROUTE,
-    match,
-  }
-}
 
 export const NOTIFY_SUCCESS = 'NOTIFY_SUCCESS'
 

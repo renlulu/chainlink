@@ -29,7 +29,7 @@ describe('fetchJob', () => {
       tasks: [expectedTask],
     })
 
-    global.fetch.getOnce(globPath(`/v2/specs/${jobSpecId}`), jobSpecResponse)
+    fetch.getOnce(globPath(`/v2/specs/${jobSpecId}`), jobSpecResponse)
 
     const store = mockStore({})
     return store.dispatch(actions.fetchJob(jobSpecId)).then(() => {
@@ -61,7 +61,7 @@ describe('fetchJobRun', () => {
     })
 
     const id = runResponse.data.id
-    global.fetch.getOnce(globPath(`/v2/runs/${id}`), runResponse)
+    fetch.getOnce(globPath(`/v2/runs/${id}`), runResponse)
 
     const store = mockStore({})
     return store.dispatch(actions.fetchJobRun(id)).then(() => {

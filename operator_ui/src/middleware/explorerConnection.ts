@@ -8,7 +8,9 @@ import { Actions } from 'reducers/actions'
  * cookie after every MATCH_ROUTE action
  */
 export function createExplorerConnectionMiddleware(
-  cookie: string = (global.document && global.document.cookie) || '',
+  // TODO: Get the TS config right and remove this if the build works correctly
+  // cookie: string = (global.document && global.document.cookie) || '',
+  cookie: string = (document && document.cookie) || '',
 ): Middleware {
   const explorerConnectionMiddleware: Middleware = store => next => (
     action: Actions,

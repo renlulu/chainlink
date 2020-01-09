@@ -1,9 +1,9 @@
-import { configure } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
-import 'mock-local-storage'
-import promiseFinally from 'promise.prototype.finally'
-import JavascriptTimeAgo from 'javascript-time-ago'
-import en from 'javascript-time-ago/locale/en'
+const { configure } = require('enzyme')
+const Adapter = require('enzyme-adapter-react-16')
+require('mock-local-storage')
+const promiseFinally = require('promise.prototype.finally')
+const JavascriptTimeAgo = require('javascript-time-ago')
+const en = require('javascript-time-ago/locale/en')
 
 promiseFinally.shim(Promise)
 JavascriptTimeAgo.locale(en)
