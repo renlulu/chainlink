@@ -66,12 +66,12 @@ case "$1" in
     ;;
 
   acceptance)
-    $base build --parallel
+    $base build
     $base up
     ;;
 
   test)
-    $test build --parallel
+    $test build
     $deps up --exit-code-from wait-db wait-db
     $test up --exit-code-from integration
     $test down -v
